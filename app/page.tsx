@@ -60,7 +60,7 @@ export default function Home() {
     <div className="invitation-bg relative overflow-hidden min-h-screen">
       {/* Top left corner - large botanical branch */}
       <Image
-        src="/assets/mantra-3.png"
+        src="/assets/mantra-2.png"
         alt=""
         width={400}
         height={400}
@@ -73,7 +73,7 @@ export default function Home() {
         alt=""
         width={350}
         height={350}
-        className="absolute top-0 right-0 opacity-70 z-0"
+        className="absolute top-1/3 right-0 opacity-70 z-0"
       />
 
       {/* Bottom right corner - large botanical branch */}
@@ -82,7 +82,15 @@ export default function Home() {
         alt=""
         width={450}
         height={450}
-        className="absolute bottom-0 right-0 opacity-70 z-0"
+        className="absolute bottom-2/3 right-0 opacity-70 z-0"
+      />
+
+      <Image
+        src="/assets/mantra-1.png"
+        alt=""
+        width={450}
+        height={450}
+        className="absolute bottom-0 left-0 opacity-70 z-0 scale-x-[-1]"
       />
 
       {/* Floating leaves - scattered around */}
@@ -99,7 +107,7 @@ export default function Home() {
         alt=""
         width={80}
         height={80}
-        className="absolute top-1/3 right-1/4 opacity-40 z-0 -rotate-45"
+        className="absolute top-2/3 right-1/4 opacity-40 z-0 -rotate-45"
       />
 
       <Image
@@ -144,17 +152,17 @@ export default function Home() {
         </div>
       )}
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 py-16">
+      <div className="relative z-10 max-w-4xl mx-auto px-6 py-16 mt-20">
         <section className="text-center mb-32">
-          <p className="text-cream text-sm mb-8 tracking-widest font-serif">{config.invitationHeader}</p>
+          <p className="text-cream text-lg mb-20 mt-10 tracking-widest font-serif">{config.invitationHeader}</p>
 
           <p className="text-cream text-lg mb-4 font-serif italic">{config.eventType}</p>
 
           <h1 className="text-gold text-6xl md:text-7xl mb-2 font-serif italic">{config.ceremonyName.split(" ")[0]}</h1>
-          <h1 className="text-gold text-6xl md:text-7xl mb-8 font-serif italic">{config.ceremonyName.split(" ")[1]}</h1>
+          <h1 className="text-gold text-6xl md:text-7xl mb-15 font-serif italic">{config.ceremonyName.split(" ")[1]}</h1>
 
-          <p className="text-cream text-base mb-4 font-serif italic">{config.date.day}</p>
-          <p className="text-cream text-sm mb-8 font-serif">Special Invitation to</p>
+          <p className="text-cream text-2xl mt-20 mb-4 font-serif italic">{config.date.day}</p>
+          <p className="text-gold text-3xl mb-8 font-serif">30 / Agustus / 2025</p>
           <p className="text-cream text-sm mb-12 max-w-2xl mx-auto font-serif">
             Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara kami.
           </p>
@@ -184,21 +192,14 @@ export default function Home() {
         </section>
 
         <section className="text-center mb-32">
-          <h2 className="text-cream text-4xl md:text-5xl mb-4 font-serif italic">{config.title}</h2>
+          <h2 className="text-cream text-4xl md:text-5xl mb-20 font-serif italic">{config.title}</h2>
 
-          <p className="text-gold text-xl mb-8 font-serif italic">{config.subtitle}</p>
-
-          <h3 className="text-gold text-3xl mb-8 font-serif italic">{config.ceremonyName}</h3>
-
-          <p className="text-cream text-base mb-4 font-serif italic">Special Invitation to</p>
-          <p className="text-cream text-sm mb-8 max-w-2xl mx-auto font-serif">
-            Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara kami.
-          </p>
+          <p className="text-gold text-3xl mb-8 font-serif italic">{config.subtitle}</p>
 
           <div className="bg-slate-800/30 backdrop-blur-sm rounded-lg p-8 mb-8 max-w-2xl mx-auto">
-            <h4 className="text-gold text-2xl mb-6 font-serif italic">{config.greeting}</h4>
+            <h4 className="text-gold text-6xl italic mb-6 italic">{config.greeting}</h4>
 
-            <p className="text-cream text-sm mb-6 font-serif">{config.description}</p>
+            <p className="text-cream text-lg italic mb-6 font-serif">{config.description}</p>
 
             <div className="text-cream font-serif">
               <p className="text-base mb-2 italic">{config.date.day}</p>

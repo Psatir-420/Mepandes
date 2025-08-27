@@ -4,10 +4,6 @@ import { Geist as Geist_Sans } from "next/font/google"
 import { Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 
-const geistSans = Geist_Sans({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-})
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
@@ -18,7 +14,6 @@ const cormorantGaramond = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Invitation - Upacara Mepandes",
   description: "Invitation to Upacara Mepandes ceremony",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -28,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-serif ${geistSans.variable} ${cormorantGaramond.variable}`}>{children}</body>
+      <body className={`${cormorantGaramond.variable} font-serif`}>{children}</body>
     </html>
   )
 }
