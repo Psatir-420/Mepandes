@@ -12,8 +12,8 @@ const cormorantGaramond = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "Invitation - Upacara Mepandes",
-  description: "Invitation to Upacara Mepandes ceremony",
+  title: "Undangan Upacara Mepandes - Puri Batan Waru",
+  description: "Invitation to Upacara Mepandes Puri Batan Waru",
 }
 
 export default function RootLayout({
