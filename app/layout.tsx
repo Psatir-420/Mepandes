@@ -1,6 +1,5 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist as Geist_Sans } from "next/font/google"
 import { Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 
@@ -9,6 +8,7 @@ const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-cormorant",
+  style: "italic"
 })
 
 export const metadata: Metadata = {
