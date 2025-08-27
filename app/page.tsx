@@ -228,29 +228,66 @@ export default function Home() {
           className="fixed inset-0 bg-slate-900/95 backdrop-blur-lg z-50 flex items-center justify-center cursor-pointer transition-opacity duration-1000"
           onClick={handleOverlayClick}
         >
-          <div className="text-center px-4 max-w-md sm:max-w-lg md:max-w-2xl mx-auto">
-            <p className="text-cream text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 tracking-widest font-serif" data-aos="fade-up">
+          {/* Overlay Decorations */}
+          <Image
+            src="/assets/mantra-2.png"
+            alt=""
+            width={180}
+            height={180}
+            className="absolute top-0 left-0 opacity-80 z-50 w-28 h-28 sm:w-36 sm:h-36"
+          />
+          <Image
+            src="/assets/mantra-5.png"
+            alt=""
+            width={140}
+            height={140}
+            className="absolute top-0 right-0 opacity-70 z-50 w-20 h-20 sm:w-32 sm:h-32"
+          />
+          <Image
+            src="/assets/mantra-1.png"
+            alt=""
+            width={160}
+            height={160}
+            className="absolute bottom-0 right-1 opacity-70 z-50 w-24 h-24 sm:w-32 sm:h-32"
+          />
+          <Image
+            src="/assets/mantra-4.png"
+            alt=""
+            width={120}
+            height={120}
+            className="absolute bottom-0 right-0 opacity-60 z-50 w-20 h-20 sm:w-28 sm:h-28"
+          />
+          <Image
+            src="/assets/mantra-4.png"
+            alt=""
+            width={80}
+            height={80}
+            className="absolute top-1/2 left-1/4 opacity-50 z-50 w-12 h-12 sm:w-20 sm:h-20"
+          />
+          {/* Overlay Content */}
+          <div className="relative text-center px-4 max-w-md sm:max-w-lg md:max-w-2xl mx-auto z-50">
+            <p className="text-cream text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 tracking-widest font-serif">
               {config.invitationHeader}
             </p>
-            <p className="text-cream text-base sm:text-lg mb-4 font-serif italic" data-aos="fade-up" data-aos-delay="100">
+            <p className="text-cream text-base sm:text-lg mb-4 font-serif italic">
               {config.eventType}
             </p>
-            <h1 className="text-gold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 font-serif italic" data-aos="zoom-in" data-aos-delay="200">
+            <h1 className="text-gold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 font-serif italic">
               {config.ceremonyName.split(" ")[0]}
             </h1>
-            <h1 className="text-gold text-2xl sm:text-3xl md:text-5xl lg:text-7xl mb-6 sm:mb-8 font-serif italic" data-aos="zoom-in" data-aos-delay="300">
+            <h1 className="text-gold text-2xl sm:text-3xl md:text-5xl lg:text-7xl mb-6 sm:mb-8 font-serif italic">
               {config.ceremonyName.split(" ")[1]}
             </h1>
-            <p className="text-cream text-sm sm:text-base mb-2 sm:mb-4 font-serif italic" data-aos="fade-up" data-aos-delay="400">
+            <p className="text-cream text-sm sm:text-base mb-2 sm:mb-4 font-serif italic">
               {config.date.day}
             </p>
-            <p className="text-gold text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 font-serif" data-aos="fade-up" data-aos-delay="500">
-              30 / Agustus / 2025
+            <p className="text-gold text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 font-serif">
+              {config.date.date} / {config.date.month} / {config.date.year}
             </p>
-            <p className="text-cream text-sm sm:text-base lg:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-serif leading-relaxed" data-aos="fade-up" data-aos-delay="600">
+            <p className="text-cream text-sm sm:text-base lg:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-serif leading-relaxed">
               Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara kami.
             </p>
-            <button className="bg-transparent border border-cream text-cream px-4 sm:px-8 py-2 text-sm sm:text-lg tracking-widest hover:bg-cream hover:text-slate-800 transition-all duration-300 font-serif animate-pulse" data-aos="flip-up" data-aos-delay="700">
+            <button className="bg-transparent border border-cream text-cream px-4 sm:px-8 py-2 text-sm sm:text-lg tracking-widest hover:bg-cream hover:text-slate-800 transition-all duration-300 font-serif animate-pulse">
               OPEN INVITATION
             </button>
           </div>
@@ -278,7 +315,7 @@ export default function Home() {
             {config.date.day}
           </p>
           <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-8 sm:mb-12 lg:mb-15 font-serif" data-aos="fade-up" data-aos-delay="200">
-            30 / Agustus / 2025
+            {config.date.date} / {config.date.month} / {config.date.year}
           </p>
           <p className="text-cream text-base sm:text-lg lg:text-xl mb-4 max-w-2xl mx-auto font-serif" data-aos="fade-up" data-aos-delay="400">
             Bertempat di.
@@ -370,17 +407,15 @@ export default function Home() {
             <p className="text-cream text-sm sm:text-base lg:text-lg mt-4 font-serif leading-relaxed px-2">
               Atas kehadiran dan doanya kami ucapkan terima kasih.
             </p>
+                      <h3 className="text-gold text-2xl sm:text-3xl lg:text-4xl mb-6 sm:mb-8 font-serif italic px-4">
+            {config.mantra}
+          </h3>
           </div>
         </section>
 
         <section className="text-center py-8 sm:py-12" data-aos="fade-up">
-          <h3 className="text-gold text-2xl sm:text-3xl lg:text-4xl mb-6 sm:mb-8 font-serif italic px-4">
-            {config.mantra}
-          </h3>
 
-          <p className="text-cream text-sm sm:text-base lg:text-lg mb-8 sm:mb-12 max-w-2xl mx-auto font-serif leading-relaxed px-4" data-aos="fade-up" data-aos-delay="100">
-            Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara kami.
-          </p>
+
 
           <h4 className="text-gold text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 font-serif italic px-4" data-aos="fade-up" data-aos-delay="200">
             {config.locationPageTitle}
