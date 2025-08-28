@@ -337,6 +337,9 @@ export default function Home() {
         <section className="min-h-screen flex flex-col justify-center items-center text-center py-8 sm:py-12" data-aos="fade-up">
           <div className="bg-slate-800/30 backdrop-blur-lg rounded-lg p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 max-w-2xl mx-auto" data-aos="zoom-in" data-aos-delay="400">
             <div className="text-cream font-serif">
+              <h2 className="text-cream text-xl sm:text-2xl md:text-3xl lg:text-4xl mb-12 sm:mb-16 lg:mb-20 font-serif italic">
+            Upacara Kami Laksanakan Pada
+          </h2>
               <p className="text-base sm:text-lg lg:text-xl mb-2 italic font-bold">
                 {config.date.day}
               </p>
