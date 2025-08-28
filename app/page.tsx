@@ -138,6 +138,15 @@ export default function Home() {
         .animate-rotate-slow {
           animation: rotate 20s linear infinite;
         }
+        .shine-effect {
+          position: relative;
+          background: linear-gradient(90deg, #D4AF37, #FFD700, #FFF8DC, #FFD700, #D4AF37);
+          background-size: 200% 100%;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shine 10s linear infinite;
+        }
         @keyframes float {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(5deg); }
@@ -145,6 +154,10 @@ export default function Home() {
         @keyframes rotate {
           from { transform: rotate(0deg); }
           to { transform: rotate(360deg); }
+        }
+        @keyframes shine {
+          0% { background-position: 300% 0; }
+          100% { background-position: 0% 0; }
         }
       `}</style>
 
@@ -295,81 +308,34 @@ export default function Home() {
       )}
 
       <div className="relative z-10 max-w-4xl w-full mx-auto px-4 sm:px-6">
+        {/* First Section - Full Height */}
         <section className="min-h-screen flex flex-col justify-center items-center text-center py-8 sm:py-12" data-aos="fade-up">
-          <p className="text-cream text-sm sm:text-base lg:text-lg mb-12 sm:mb-16 lg:mb-20 mt-4 sm:mt-8 tracking-widest font-serif">
-            {config.invitationHeader}
-          </p>
+          <h4 className="text-gold text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic mb-4 sm:mb-6">
+            {config.greeting}
+          </h4>
 
-          <p className="text-cream text-base sm:text-lg mb-4 font-serif italic">
-            {config.eventType}
+          <p className="text-cream text-sm sm:text-base lg:text-lg italic mb-6 sm:mb-8 lg:mb-10 font-serif leading-relaxed px-2">
+            {config.description}
           </p>
-
-          <h1 className="text-gold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-2 font-serif italic" data-aos="zoom-in">
-            {config.ceremonyName.split(" ")[0]}
-          </h1>
-          <h1 className="text-gold text-2xl sm:text-3xl md:text-5xl lg:text-7xl mb-8 sm:mb-12 lg:mb-15 font-serif italic" data-aos="zoom-in" data-aos-delay="200">
-            {config.ceremonyName.split(" ")[1]}
-          </h1>
-
-          <p className="text-cream text-lg sm:text-xl lg:text-2xl mt-6 sm:mt-8 mb-4 font-serif italic" data-aos="fade-up">
-            {config.date.day}
-          </p>
-          <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-8 sm:mb-12 lg:mb-15 font-serif" data-aos="fade-up" data-aos-delay="200">
-            {config.date.date} / {config.date.month} / {config.date.year}
-          </p>
-          <p className="text-cream text-base sm:text-lg lg:text-xl mb-4 max-w-2xl mx-auto font-serif" data-aos="fade-up" data-aos-delay="400">
-            Bertempat di.
-          </p>
-
-          <p className="text-gold text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 font-serif px-4" data-aos="fade-up" data-aos-delay="600">
-            {config.location.address}, {config.location.subAddress}
-          </p>
-
-          {/* Responsive countdown */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-10 text-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-delay="100">
-            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
-              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.days}</div>
-              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Days</div>
-            </div>
-            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
-              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.hours}</div>
-              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Hours</div>
-            </div>
-            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
-              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.minutes}</div>
-              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Minutes</div>
-            </div>
-            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
-              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.seconds}</div>
-              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Seconds</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="min-h-screen flex flex-col justify-center items-center text-center py-8 sm:py-12" data-aos="fade-up">
+          
           <h2 className="text-cream text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-12 sm:mb-16 lg:mb-20 font-serif italic">
             {config.title}
           </h2>
 
-          <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 lg:mb-10 font-serif italic px-4" data-aos="fade-left" data-aos-delay="100">
+          <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 lg:mb-10 font-serif italic px-4 shine-effect" data-aos="fade-left" data-aos-delay="100">
             Anak Agung Gde Dalem Widya Adnyana
           </p>
           <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 lg:mb-10 font-serif italic" data-aos="zoom-in" data-aos-delay="200">
             &
           </p>
-          <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-12 sm:mb-16 lg:mb-20 font-serif italic px-4" data-aos="fade-right" data-aos-delay="300">
+          <p className="text-gold text-xl sm:text-2xl lg:text-3xl mb-12 sm:mb-16 lg:mb-20 font-serif italic px-4 shine-effect" data-aos="fade-right" data-aos-delay="300">
             Anak Agung Istri Dyah Widya Tantri
           </p>
+        </section>
 
+        {/* Second Section - Event Details */}
+        <section className="min-h-screen flex flex-col justify-center items-center text-center py-8 sm:py-12" data-aos="fade-up">
           <div className="bg-slate-800/30 backdrop-blur-lg rounded-lg p-4 sm:p-6 lg:p-8 mb-6 sm:mb-8 max-w-2xl mx-auto" data-aos="zoom-in" data-aos-delay="400">
-            <h4 className="text-gold text-3xl sm:text-4xl md:text-5xl lg:text-6xl italic mb-4 sm:mb-6">
-              {config.greeting}
-            </h4>
-
-            <p className="text-cream text-sm sm:text-base lg:text-lg italic mb-6 sm:mb-8 lg:mb-10 font-serif leading-relaxed px-2">
-              {config.description}
-            </p>
-
             <div className="text-cream font-serif">
               <p className="text-base sm:text-lg lg:text-xl mb-2 italic font-bold">
                 {config.date.day}
@@ -407,16 +373,34 @@ export default function Home() {
             <p className="text-cream text-sm sm:text-base lg:text-lg mt-4 font-serif leading-relaxed px-2">
               Atas kehadiran dan doanya kami ucapkan terima kasih.
             </p>
-                      <h3 className="text-gold text-2xl sm:text-3xl lg:text-4xl mb-6 sm:mb-8 font-serif italic px-4">
-            {config.mantra}
-          </h3>
+            
+            <h3 className="text-gold text-2xl sm:text-3xl lg:text-4xl mb-6 sm:mb-8 font-serif italic px-4">
+              {config.mantra}
+            </h3>
+          </div>
+
+          {/* Responsive countdown */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 lg:gap-10 text-center mt-6 sm:mt-8" data-aos="fade-up" data-aos-delay="100">
+            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
+              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.days}</div>
+              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Days</div>
+            </div>
+            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
+              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.hours}</div>
+              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Hours</div>
+            </div>
+            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
+              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.minutes}</div>
+              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Minutes</div>
+            </div>
+            <div className="flex flex-col items-center bg-slate-800/40 rounded-lg px-2 sm:px-3 py-2 min-w-[60px] sm:min-w-[70px] backdrop-blur-sm">
+              <div className="text-cream text-xl sm:text-2xl md:text-3xl font-serif">{timeLeft.seconds}</div>
+              <div className="text-cream text-xs sm:text-sm md:text-base font-serif">Seconds</div>
+            </div>
           </div>
         </section>
 
         <section className="text-center py-8 sm:py-12" data-aos="fade-up">
-
-
-
           <h4 className="text-gold text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 font-serif italic px-4" data-aos="fade-up" data-aos-delay="200">
             {config.locationPageTitle}
           </h4>
